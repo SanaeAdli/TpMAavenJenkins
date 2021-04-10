@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
-   <packaging>war</packaging>
   <artifactId>my-app</artifactId>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
   <name>my-app</name>
@@ -57,6 +57,15 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+        
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
@@ -70,14 +79,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-          <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.1</version>
-        <configuration>
-          <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-        </configuration>
-      </plugin>
+         
       </plugins>
     </pluginManagement>
   </build>
